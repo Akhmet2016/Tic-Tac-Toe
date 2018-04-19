@@ -7,43 +7,45 @@
 	<link rel="stylesheet" href="styles/main.css">
 	<!-- Подключение jQuery -->
 	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/script.js"></script>
 	<!-- Подключение библиотеки с иконками -->
 	<link rel="icon" type="image/png" href="images/favicon/favicon.ico" />
+	<!-- Подключение иконок -->
+	<script src="https://use.fontawesome.com/d0ea7dfde0.js"></script>
 
 </head>
 <body>
+	<div class="caption font-effect-anaglyphic-2"><i class="fa fa-cubes" aria-hidden="true"></i> Tic-Tac-Toe "New Life"</div>
 	<!-- Исходы игры -->
-	<div class="resultGame">
-		<p class="resultText"></p>
-	</div>
-	<div class="resultGameBad">
-		<p class="resultTextBad">Ничья</p>
-	</div>
+	<div class="statistics font-effect-neon"><p>Round <span>1</span></p></div>
+	<div class="score font-effect-neon"><i class="fa fa-user-circle" aria-hidden="true"></i> First gamer <span class="firstGamer">0</span> <i class="fa fa-hand-o-left" aria-hidden="true"></i> vs <i class="fa fa-hand-o-right" aria-hidden="true"></i> <span class="secondGamer">0 </span> Second gamer <i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
+
 	<!-- Основное поле игры -->
 	<section>
-		<div class="statistics"><p>Раунд <span>1</span></p></div>
-		<div class="score">Первый игрок <span class="firstGamer">0</span> - <span class="secondGamer">0</span> Второй игрок</div>
 		<!-- Разметка поля -->
 		<div class="playingField">
 			<!-- Результат -->
-			<div class="victory">победа</div>
+			<div class="victory font-effect-neon">победа</div>
 			<!-- Поле -->
-			<div class="cell" id="1"></div>
-			<div class="cell" id="2"></div>
-			<div class="cell" id="3"></div>
-			<div class="cell" id="4"></div>
-			<div class="cell" id="5"></div>
-			<div class="cell" id="6"></div>
-			<div class="cell" id="7"></div>
-			<div class="cell" id="8"></div>
-			<div class="cell" id="9"></div>
+			<div class="cell one" id="1"></div>
+			<div class="cell two" id="2"></div>
+			<div class="cell three" id="3"></div>
+			<div class="cell four" id="4"></div>
+			<div class="cell five" id="5"></div>
+			<div class="cell six" id="6"></div>
+			<div class="cell seven" id="7"></div>
+			<div class="cell eight" id="8"></div>
+			<div class="cell nine" id="9"></div>
 		</div>
-		<!-- Кнопка для рестарта игры -->
-		<div class="restart">
-			<a href="index.html">Go по-новой</a>
-		</div>
+		
 	</section>
+	<!-- Кнопка для рестарта игры -->
+	<div class="restart">
+		<a href="index.html" class="button">
+			Go new game
+		</a>
+	</div>
+
+	<script src="js/script.js"></script>
 
 </body>
 </html>

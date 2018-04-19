@@ -7,11 +7,20 @@ $(document).ready(function() {
 		var cell_text = $(this).text();
 
 		if (cell_text != '') {
-			alert("Ааа нет, тут же занято");
+			$('.victory').text('hey is not empty').show(100, function(){
+				setTimeout(function() {
+					$('.victory').hide();
+				}, 1000);
+			});
 		} else {
 
 			if (mass.length == 0 || mass.length % 2 == 0) {
 				$(this).text('x');
+
+				if ($(this).hasClass('naught')) {
+	            	$(this).removeClass('naught');
+	            }
+				$(this).addClass('cross');
 
 				var id_cell = $(this).attr('id');
 				id_cell = parseInt(id_cell);
@@ -33,6 +42,11 @@ $(document).ready(function() {
 				id_cell = parseInt(id_cell);
 
 	            $(this).text('o');
+
+	            if ($(this).hasClass('cross')) {
+	            	$(this).removeClass('cross');
+	            }
+	            $(this).addClass('naught');
 
 	            mass.push(id_cell);
 	            
@@ -60,51 +74,51 @@ $(document).ready(function() {
 		//Для первого игрока
 		//Проверка по горизонтали
 		if (mass_first[0] == 2 && mass_first[1] == 2 && mass_first[2] == 2) {
-			$('.victory').text('Первый игрок лучше');
+			$('.victory').text('first player won');
 	 		$('.victory').css('display', 'block');
 	 		v = 1;
 	 		victoryBegin('1');
 		}
 		if (mass_first[3] == 2 && mass_first[4] == 2 && mass_first[5] == 2) {
-			$('.victory').text('Первый игрок лучше');
+			$('.victory').text('first player won');
 	 		$('.victory').css('display', 'block');
 	 		v = 1;
 	 		victoryBegin('1');
 		}
 		if (mass_first[6] == 2 && mass_first[7] == 2 && mass_first[8] == 2) {
-			$('.victory').text('Первый игрок лучше');
+			$('.victory').text('first player won');
 	 		$('.victory').css('display', 'block');
 	 		v = 1;
 	 		victoryBegin('1');
 		}
 		//Проверка по вертикали
 		if (mass_first[0] == 2 && mass_first[3] == 2 && mass_first[6] == 2) {
-			$('.victory').text('Первый игрок лучше');
+			$('.victory').text('first player won');
 	 		$('.victory').css('display', 'block');
 	 		v = 1;
 	 		victoryBegin('1');
 		}
 		if (mass_first[1] == 2 && mass_first[4] == 2 && mass_first[7] == 2) {
-			$('.victory').text('Первый игрок лучше');
+			$('.victory').text('first player won');
 	 		$('.victory').css('display', 'block');
 	 		v = 1;
 	 		victoryBegin('1');
 		}
 		if (mass_first[2] == 2 && mass_first[5] == 2 && mass_first[8] == 2) {
-			$('.victory').text('Первый игрок лучше');
+			$('.victory').text('first player won');
 	 		$('.victory').css('display', 'block');
 	 		v = 1;
 	 		victoryBegin('1');
 		}
 		//Проверка диагоналей
 		if (mass_first[0] == 2 && mass_first[4] == 2 && mass_first[8] == 2) {
-			$('.victory').text('Первый игрок лучше');
+			$('.victory').text('first player won');
 	 		$('.victory').css('display', 'block');
 	 		v = 1;
 	 		victoryBegin('1');
 		}
 		if (mass_first[2] == 2 && mass_first[4] == 2 && mass_first[6] == 2) {
-			$('.victory').text('Первый игрок лучше');
+			$('.victory').text('first player won');
 	 		$('.victory').css('display', 'block');
 	 		v = 1;
 	 		victoryBegin('1');
@@ -113,50 +127,50 @@ $(document).ready(function() {
 		//Для второго игрока
 		//Проверка по горизонтали
 		if (mass_second[0] == 3 && mass_second[1] == 3 && mass_second[2] == 3) {
-			$('.victory').text('Второй игрок лучше');
+			$('.victory').text('second player won');
 	 		$('.victory').css('display', 'block');
 	 		v = 1;
 	 		victoryBegin('2');
 		}
 		if (mass_second[3] == 3 && mass_second[4] == 3 && mass_second[5] == 3) {
-			$('.victory').text('Второй игрок лучше');
+			$('.victory').text('second player won');
 	 		$('.victory').css('display', 'block');
 	 		v = 1;
 	 		victoryBegin('2');
 		}
 		if (mass_second[6] == 3 && mass_second[7] == 3 && mass_second[8] == 3) {
-			$('.victory').text('Второй игрок лучше');
+			$('.victory').text('second player won');
 	 		$('.victory').css('display', 'block');
 	 		v = 1;
 	 		victoryBegin('2');
 		}
 		//Проверка по вертикали
 		if (mass_second[0] == 3 && mass_second[3] == 3 && mass_second[6] == 3) {
-			$('.victory').text('Второй игрок лучше');
+			$('.victory').text('second player won');
 	 		$('.victory').css('display', 'block');
 	 		v = 1;
 	 		victoryBegin('2');
 		}
 		if (mass_second[1] == 3 && mass_second[4] == 3 && mass_second[7] == 3) {
-			$('.victory').text('Второй игрок лучше');
+			$('.victory').text('second player won');
 	 		$('.victory').css('display', 'block');
 	 		victoryBegin('2');
 		}
 		if (mass_second[2] == 3 && mass_second[5] == 3 && mass_second[8] == 3) {
-			$('.victory').text('Второй игрок лучше');
+			$('.victory').text('second player won');
 	 		$('.victory').css('display', 'block');
 	 		v = 1;
 	 		victoryBegin('2');
 		}
 		//Проверка диагоналей
 		if (mass_second[0] == 3 && mass_second[4] == 3 && mass_second[8] == 3) {
-			$('.victory').text('Второй игрок лучше');
+			$('.victory').text('second player won');
 	 		$('.victory').css('display', 'block');
 	 		v = 1;
 	 		victoryBegin('2');
 		}
 		if (mass_second[2] == 3 && mass_second[4] == 3 && mass_second[6] == 3) {
-			$('.victory').text('Второй игрок лучше');
+			$('.victory').text('second player won');
 	 		$('.victory').css('display', 'block');
 	 		v = 1;
 	 		victoryBegin('2');
@@ -197,8 +211,7 @@ $(document).ready(function() {
 	function noneVictory() {
 
 		setTimeout(function() {
-			$('.victory').text('Увы, победителей нет');
-			$('.victory').css('display', 'block');
+			$('.victory').text('there are no winner').css('display', 'block');
 		}, 500);
 
 		setTimeout(function() {
@@ -214,5 +227,4 @@ $(document).ready(function() {
 		}, 2000);
 
 	}
-
 })
