@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<title>Tic-Tac-Toe</title>
+	<link rel="stylesheet" href="styles/main.css">
+	<!-- Подключение jQuery -->
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/script.js"></script>
+	<!-- Подключение библиотеки с иконками -->
+	<link rel="icon" type="image/png" href="images/favicon/favicon.ico" />
+
+</head>
+<body>
+	<!-- Исходы игры -->
+	<div class="resultGame">
+		<p class="resultText"></p>
+	</div>
+	<div class="resultGameBad">
+		<p class="resultTextBad">Ничья</p>
+	</div>
+	<!-- Основное поле игры -->
+	<section>
+		<div class="statistics"><p>Раунд <span>1</span></p></div>
+		<div class="score">Первый игрок <span class="firstGamer">0</span> - <span class="secondGamer">0</span> Второй игрок</div>
+		<!-- Разметка поля -->
+		<div class="playingField">
+			<!-- Результат -->
+			<div class="victory">победа</div>
+			<!-- Поле -->
+			<div class="cell" id="1"></div>
+			<div class="cell" id="2"></div>
+			<div class="cell" id="3"></div>
+			<div class="cell" id="4"></div>
+			<div class="cell" id="5"></div>
+			<div class="cell" id="6"></div>
+			<div class="cell" id="7"></div>
+			<div class="cell" id="8"></div>
+			<div class="cell" id="9"></div>
+		</div>
+		<!-- Кнопка для рестарта игры -->
+		<div class="restart">
+			<a href="index.html">Go по-новой</a>
+		</div>
+	</section>
+
+</body>
+</html>
